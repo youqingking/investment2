@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.ui-test-reports/*/
+!.ui-test-reports/_spec/
+!.ui-test-reports/_spec/**
+test-results/
+playwright-report/
+agno1/*
+analysis-result/*

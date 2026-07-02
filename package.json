@@ -1,0 +1,13 @@
+{
+  "name": "investment2-ui-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "ui:test": "playwright test",
+    "ui:test:once": "node scripts/ui-test-once.mjs",
+    "ui:test:loop": "node scripts/ui-test-loop.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}

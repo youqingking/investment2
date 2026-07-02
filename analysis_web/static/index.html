@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>美股分析结果</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>美股静默吸筹分析结果</h1>
+      <p>按 ticker 展示 analysis_filt / v1 / v2 / v3 四阶段报告</p>
+    </div>
+    <div class="status-line" id="statusLine">加载中</div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="panel">
+        <div class="panel-title">日期</div>
+        <input id="datePicker" class="date-input" type="date">
+        <div id="dateSummary" class="date-summary"></div>
+      </section>
+
+      <section class="panel panel-fill">
+        <div class="panel-title">Ticker</div>
+        <input id="tickerSearch" class="search-input" type="search" placeholder="搜索 ticker">
+        <div class="filters" role="group" aria-label="完成状态筛选">
+          <button class="filter-button active" data-filter="all">全部</button>
+          <button class="filter-button" data-filter="complete">完成</button>
+          <button class="filter-button" data-filter="partial">部分</button>
+          <button class="filter-button" data-filter="empty">无报告</button>
+        </div>
+        <div id="tickerList" class="ticker-list"></div>
+      </section>
+    </aside>
+
+    <section class="content">
+      <div id="emptyState" class="empty-state">请选择一个 ticker。</div>
+      <article id="reportView" class="report-view hidden">
+        <div class="report-header">
+          <div>
+            <div class="eyebrow" id="selectedDate"></div>
+            <h2 id="selectedTicker"></h2>
+          </div>
+          <div id="selectedStatus" class="status-badge"></div>
+        </div>
+        <div id="stageSummary" class="stage-summary"></div>
+        <nav id="stageTabs" class="stage-tabs" aria-label="分析阶段"></nav>
+        <div id="reportMeta" class="report-meta"></div>
+        <div id="markdownContent" class="markdown-body"></div>
+        <section class="attachments-panel">
+          <div class="section-title">附件</div>
+          <div id="attachmentsList" class="attachments-list"></div>
+          <div id="attachmentPreview" class="attachment-preview hidden"></div>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
